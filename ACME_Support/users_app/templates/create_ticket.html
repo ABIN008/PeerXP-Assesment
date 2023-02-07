@@ -1,0 +1,17 @@
+{% include 'base.html' %}
+<div class="col-5 text-center" style="margin:40px auto;border:1px solid black;padding:50px;border-radius:15px">
+  <h3>Create <span style="color:Red">Token</span></h3><br>
+  
+  <form method="post">
+    {% csrf_token %}
+    
+    {{ form.as_p }}
+    <input type="submit" class="btn btn-success" value="Create">
+   
+  </form>
+      
+</div>
+
+
+
+

@@ -1,0 +1,27 @@
+{% include 'index.html' %}
+
+<div class="col-5 text-center" style="margin:40px auto;border:1px solid black;padding:50px;border-radius:15px">
+  <h3>Update <span style="color:green">Department</span></h3><br>
+  
+  <form action="" method="post">
+    {% csrf_token %}
+    {% for field in form %}
+        <div class="form-group">
+            <label for="{{ field.id_for_label }}" class="mb-2">{{ field.label }}</label>
+       
+            {{ field }}
+            {% comment %} {% if field.help_text %}
+                <small class="form-control">{{ field.help_text }}</small>
+            {% endif %} {% endcomment %}
+        </div>
+    {% endfor %}
+    <input type="submit" value="Update" class="btn btn-warning">
+</form>
+</div>
+
+
+
+
+
+
+

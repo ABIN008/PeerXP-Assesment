@@ -1,0 +1,24 @@
+{% include 'index.html' %}
+<div class="col-11 text-center" style="margin:40px auto;border:1px solid black;padding:50px;border-radius:15px">
+  <h3><span style="color:Red">Departments</span></h3><br>
+    <div class="row text-center">
+        {% for item in objects%}
+<div class="card ms-2 mt-2  text-white" style="width: 18rem;background-color:#2B3A55;">
+    
+    <div class="card-body ">
+       
+      <h5 class="card-title">{{item.name}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Details--</h6>
+      <p class="card-text">{{item.desc}}</p>
+     
+      <a href="{%url 'update_dept' item.id%}" class="btn btn-primary">Update</a>
+
+      <form action="{%url 'delete_dept' item.id%}" method="post" class="d-inline">{% csrf_token %}
+        <input type="submit"class="btn btn-danger" value="Delete">
+      </form>
+    </div>   
+   
+  </div>{%endfor%}
+    
+    </div>
+</div>
